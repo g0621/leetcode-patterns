@@ -20,25 +20,30 @@
   }
 
   .easy {
-    background-color: #5cb85c;
+    background-color: #5cb85c !important;
   }
 
   .medium {
-    background-color: #f0ad4e;
+    background-color: #f0ad4e !important;
   }
 
   .hard {
-    background-color: #d9534f;
+    background-color: #d9534f !important;
   }
 
   .companies,
   .patterns {
-    justify-content: space-evenly;
     margin: 0;
+    width: 100%;
+  }
+
+  .row span{
+    width: auto;
   }
 
   .companies img {
     padding: 5px;
+    width: auto;
   }
 
   .react-toggle {

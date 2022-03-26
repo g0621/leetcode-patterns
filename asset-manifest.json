@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/leetcode-patterns/static/css/main.68edb0ec.css",
+    "main.css": "/leetcode-patterns/static/css/main.e42a9998.css",
     "main.js": "/leetcode-patterns/static/js/main.8ce93d2e.js",
     "index.html": "/leetcode-patterns/index.html",
-    "main.68edb0ec.css.map": "/leetcode-patterns/static/css/main.68edb0ec.css.map",
+    "main.e42a9998.css.map": "/leetcode-patterns/static/css/main.e42a9998.css.map",
     "main.8ce93d2e.js.map": "/leetcode-patterns/static/js/main.8ce93d2e.js.map"
   },
   "entrypoints": [
-    "static/css/main.68edb0ec.css",
+    "static/css/main.e42a9998.css",
     "static/js/main.8ce93d2e.js"
   ]
 }

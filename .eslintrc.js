@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['airbnb', 'plugin:prettier/recommended', 'prettier/react'],
+  extends: ['airbnb'],
   env: {
     browser: true,
     commonjs: true,
@@ -16,6 +16,10 @@ module.exports = {
       {
         ignoreClassFields: false,
       },
+    ],
+    'react/no-unstable-nested-components': [
+      'warn',
+      { allowAsProps: true },
     ],
     'max-len': [
       'warn',

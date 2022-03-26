@@ -30,12 +30,11 @@ import PatternFrequencies from '../PatternFrequencies';
 
 const iconPath = `${process.env.PUBLIC_URL}/assets/icons/`;
 
-const Table = () => {
+function Table() {
   const data = React.useMemo(() => questions, []);
   const [resetCount, setResetCount] = useState(0);
-  let checkedList =
-    JSON.parse(localStorage.getItem('checked')) ||
-    new Array(data.length).fill(false);
+  let checkedList = JSON.parse(localStorage.getItem('checked'))
+    || new Array(data.length).fill(false);
 
   /* If the user has previously visited the website, then an array in
   LocalStorage would exist of a certain length which corresponds to which
@@ -86,9 +85,7 @@ const Table = () => {
 
   const resetHandler = () => {
     setChecked(new Array(checked.length).fill(false));
-    setDifficultyCount(() => {
-      return { Easy: 0, Medium: 0, Hard: 0 };
-    });
+    setDifficultyCount(() => ({ Easy: 0, Medium: 0, Hard: 0 }));
     const count = resetCount + 1;
     setResetCount(count);
   };
@@ -109,20 +106,25 @@ const Table = () => {
                 <span>
                   <Badge className="" pill>
                     <span
-                      data-tip={`You've completed ${difficultyCount.Easy +
-                        difficultyCount.Medium +
-                        difficultyCount.Hard}/${totalDifficultyCount.Easy +
-                        totalDifficultyCount.Medium +
-                        totalDifficultyCount.Hard} total questions`}
+                      data-tip={`You've completed ${
+                        difficultyCount.Easy
+                        + difficultyCount.Medium
+                        + difficultyCount.Hard
+                      }/${
+                        totalDifficultyCount.Easy
+                        + totalDifficultyCount.Medium
+                        + totalDifficultyCount.Hard
+                      } total questions`}
                     >
-                      Total:{' '}
-                      {difficultyCount.Easy +
-                        difficultyCount.Medium +
-                        difficultyCount.Hard}
+                      Total:
+                      {' '}
+                      {difficultyCount.Easy
+                        + difficultyCount.Medium
+                        + difficultyCount.Hard}
                       /
-                      {totalDifficultyCount.Easy +
-                        totalDifficultyCount.Medium +
-                        totalDifficultyCount.Hard}
+                      {totalDifficultyCount.Easy
+                        + totalDifficultyCount.Medium
+                        + totalDifficultyCount.Hard}
                     </span>
                   </Badge>
                   <br />
@@ -130,7 +132,11 @@ const Table = () => {
                     <span
                       data-tip={`You've completed ${difficultyCount.Easy}/${totalDifficultyCount.Easy} easy questions`}
                     >
-                      Easy: {difficultyCount.Easy}/{totalDifficultyCount.Easy}
+                      Easy:
+                      {' '}
+                      {difficultyCount.Easy}
+                      /
+                      {totalDifficultyCount.Easy}
                     </span>
                   </Badge>
                   <br />
@@ -138,7 +144,10 @@ const Table = () => {
                     <span
                       data-tip={`You've completed ${difficultyCount.Medium}/${totalDifficultyCount.Medium} medium questions`}
                     >
-                      Medium: {difficultyCount.Medium}/
+                      Medium:
+                      {' '}
+                      {difficultyCount.Medium}
+                      /
                       {totalDifficultyCount.Medium}
                     </span>
                   </Badge>
@@ -147,7 +156,11 @@ const Table = () => {
                     <span
                       data-tip={`You've completed ${difficultyCount.Hard}/${totalDifficultyCount.Hard} hard questions`}
                     >
-                      Hard: {difficultyCount.Hard}/{totalDifficultyCount.Hard}
+                      Hard:
+                      {' '}
+                      {difficultyCount.Hard}
+                      /
+                      {totalDifficultyCount.Hard}
                     </span>
                   </Badge>
                   <br />
@@ -175,66 +188,58 @@ const Table = () => {
               );
             },
             id: 'Checkbox',
-            Cell: cellInfo => {
-              return (
-                <span data-tip={`Question #${Number(cellInfo.row.id) + 1}`}>
-                  <input
-                    type="checkbox"
-                    checked={checked[cellInfo.row.original.id]}
-                    onChange={() => {
-                      checked[cellInfo.row.original.id] = !checked[
-                        cellInfo.row.original.id
-                      ];
+            Cell: (cellInfo) => (
+              <span data-tip={`Question #${Number(cellInfo.row.id) + 1}`}>
+                <input
+                  type="checkbox"
+                  checked={checked[cellInfo.row.original.id]}
+                  onChange={() => {
+                    checked[cellInfo.row.original.id] = !checked[cellInfo.row.original.id];
 
-                      const additive = checked[cellInfo.row.original.id]
-                        ? 1
-                        : -1;
-                      difficultyCount[
-                        cellInfo.row.original.difficulty
-                      ] += additive;
-                      setDifficultyCount(difficultyCount);
-                      setChecked([...checked]);
-                    }}
-                  />
-                </span>
-              );
-            },
+                    const additive = checked[cellInfo.row.original.id] ? 1 : -1;
+                    difficultyCount[cellInfo.row.original.difficulty]
+                      += additive;
+                    setDifficultyCount(difficultyCount);
+                    setChecked([...checked]);
+                  }}
+                />
+              </span>
+            ),
           },
           {
             Header: 'Questions',
             accessor: 'questions',
             disableSortBy: true,
-            Cell: cellInfo => {
-              return (
-                <NavLink
-                  target="_blank"
-                  href={cellInfo.row.original.url}
-                  onClick={() => {
-                    Event(
-                      'Table',
-                      'Clicked question url',
-                      `${cellInfo.row.original.name} question url`,
-                    );
-                  }}
-                >
-                  {cellInfo.row.original.premium ? (
-                    <span data-tip="Requires leetcode premium to view">
-                      <FaLock />{' '}
-                    </span>
-                  ) : (
-                    ''
-                  )}
-                  {cellInfo.row.original.name}
-                </NavLink>
-              );
-            },
+            Cell: (cellInfo) => (
+              <NavLink
+                target="_blank"
+                href={cellInfo.row.original.url}
+                onClick={() => {
+                  Event(
+                    'Table',
+                    'Clicked question url',
+                    `${cellInfo.row.original.name} question url`,
+                  );
+                }}
+              >
+                {cellInfo.row.original.premium ? (
+                  <span data-tip="Requires leetcode premium to view">
+                    <FaLock />
+                    {' '}
+                  </span>
+                ) : (
+                  ''
+                )}
+                {cellInfo.row.original.name}
+              </NavLink>
+            ),
             disableFilters: true,
           },
           {
             Header: 'Solutions',
             accessor: 'solutions',
             disableSortBy: true,
-            Cell: cellInfo => {
+            Cell: (cellInfo) => {
               const url = cellInfo.row.original.premium
                 ? `${cellInfo.row.original.url}/`
                 : cellInfo.row.original.url;
@@ -257,33 +262,31 @@ const Table = () => {
             disableFilters: true,
           },
           {
-            Header: () => {
-              return (
-                // eslint-disable-next-line
-                // eslint-disable-next-line jsx-a11y/label-has-associated-control
-                <label htmlFor="pattern-toggle">
-                  <span>Show/Hide Patterns </span>
-                  <Toggle
-                    id="pattern-toggle"
-                    defaultChecked={showPatterns[0]}
-                    icons={{
-                      checked: null,
-                      unchecked: null,
-                    }}
-                    onChange={() => {
-                      showPatterns[0] = !showPatterns[0];
-                      setShowPatterns([...showPatterns]);
-                    }}
-                  />
-                </label>
-              );
-            },
+            Header: () => (
+              // eslint-disable-next-line
+              // eslint-disable-next-line jsx-a11y/label-has-associated-control
+              <label htmlFor="pattern-toggle">
+                <span>Show/Hide Patterns </span>
+                <Toggle
+                  id="pattern-toggle"
+                  defaultChecked={showPatterns[0]}
+                  icons={{
+                    checked: null,
+                    unchecked: null,
+                  }}
+                  onChange={() => {
+                    showPatterns[0] = !showPatterns[0];
+                    setShowPatterns([...showPatterns]);
+                  }}
+                />
+              </label>
+            ),
             accessor: 'pattern',
             disableSortBy: true,
-            Cell: cellInfo => {
+            Cell: (cellInfo) => {
               const patterns = `${cellInfo.row.original.pattern}`
                 .split(',')
-                .map(pattern => {
+                .map((pattern) => {
                   if (showPatterns[0] || checked[cellInfo.row.original.id]) {
                     return (
                       <Badge key={pattern} pill>
@@ -308,7 +311,7 @@ const Table = () => {
             Header: 'Difficulty',
             accessor: 'difficulty',
             disableSortBy: true,
-            Cell: cellInfo => (
+            Cell: (cellInfo) => (
               <Row>
                 <Badge
                   className={cellInfo.row.original.difficulty.toLowerCase()}
@@ -321,20 +324,15 @@ const Table = () => {
             Filter: SelectDifficultyColumnFilter,
           },
           {
-            Header: () => {
-              return (
-                <>
-                  <div
-                    style={{ whiteSpace: 'nowrap', display: 'inline-block' }}
-                  >
-                    Companies{' '}
-                    <span data-tip="Companies retrieved from Leetcode Premium (January 2022)">
-                      <FaQuestionCircle />
-                    </span>
-                  </div>
-                </>
-              );
-            },
+            Header: () => (
+              <div style={{ whiteSpace: 'nowrap', display: 'inline-block' }}>
+                Companies
+                {' '}
+                <span data-tip="Companies retrieved from Leetcode Premium (January 2022)">
+                  <FaQuestionCircle />
+                </span>
+              </div>
+            ),
             accessor: 'companies',
             sortType: (a, b) => {
               if (a.original.companies.length === b.original.companies.length) {
@@ -344,17 +342,17 @@ const Table = () => {
                 ? 1
                 : -1;
             },
-            Cell: cellInfo => {
-              const companies = cellInfo.row.original.companies.map(company => {
-                return (
+            Cell: (cellInfo) => {
+              const companies = cellInfo.row.original.companies.map(
+                (company) => (
                   <img
                     key={company}
                     src={`${iconPath}${company}.png`}
                     alt={company}
                     data-tip={company}
                   />
-                );
-              });
+                ),
+              );
 
               return <Row className="companies">{companies}</Row>;
             },
@@ -391,9 +389,9 @@ const Table = () => {
       <PatternFrequencies filters={filters} rows={filteredRows} />
       <ReactTable borderless striped hover {...getTableProps()}>
         <thead>
-          {headerGroups.map(headerGroup => (
+          {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map(column => (
+              {headerGroup.headers.map((column) => (
                 <th {...column.getHeaderProps()}>
                   <div {...column.getSortByToggleProps({ title: null })}>
                     {column.render('Header')}
@@ -412,15 +410,13 @@ const Table = () => {
         </thead>
 
         <tbody {...getTableBodyProps()}>
-          {rows.map(row => {
+          {rows.map((row) => {
             prepareRow(row);
             return (
               <tr {...row.getRowProps()}>
-                {row.cells.map(cell => {
-                  return (
-                    <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
-                  );
-                })}
+                {row.cells.map((cell) => (
+                  <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                ))}
               </tr>
             );
           })}
@@ -428,6 +424,6 @@ const Table = () => {
       </ReactTable>
     </Container>
   );
-};
+}
 
 export default Table;

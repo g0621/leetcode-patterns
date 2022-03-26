@@ -12,14 +12,12 @@ import { Event } from '../Shared/Tracking';
 
 import './styles.scss';
 
-const Navigation = () => {
+function Navigation() {
   return (
     <Navbar color="light" light>
       <Container>
         <NavbarBrand
-          onClick={() =>
-            Event('Navigation', 'Clicked link', 'Leetcode Patterns link')
-          }
+          onClick={() => Event('Navigation', 'Clicked link', 'Leetcode Patterns link')}
         >
           Leetcode Patterns
         </NavbarBrand>
@@ -37,6 +35,6 @@ const Navigation = () => {
       </Container>
     </Navbar>
   );
-};
+}
 
 export default Navigation;

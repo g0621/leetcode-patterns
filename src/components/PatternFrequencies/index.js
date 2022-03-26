@@ -4,7 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
-const PatternFrequencies = ({ filters, rows }) => {
+function PatternFrequencies({ filters, rows }) {
   const patternsMap = rows.reduce((acc, row) => {
     for (let i = 0; i < row.original.pattern.length; i += 1) {
       const pattern = row.original.pattern[i];
@@ -15,11 +15,9 @@ const PatternFrequencies = ({ filters, rows }) => {
   const sortedPatternsByFrequency = Object.keys(patternsMap).sort(
     (a, b) => patternsMap[b] - patternsMap[a],
   );
-  const showComponent = filters.find(filter =>
-    ['companies', 'difficulty'].includes(filter.id),
-  );
+  const showComponent = filters.find((filter) => ['companies', 'difficulty'].includes(filter.id));
 
-  const getFrequencyClass = rate => {
+  const getFrequencyClass = (rate) => {
     const highestFrequency = Math.round(
       patternsMap[sortedPatternsByFrequency[0]],
     );
@@ -34,7 +32,7 @@ const PatternFrequencies = ({ filters, rows }) => {
       hard: highestFrequency,
     };
 
-    return Object.keys(frequencyRate).find(key => rate <= frequencyRate[key]);
+    return Object.keys(frequencyRate).find((key) => rate <= frequencyRate[key]);
   };
 
   return showComponent ? (
@@ -50,13 +48,16 @@ const PatternFrequencies = ({ filters, rows }) => {
           <span
             data-tip={`${patternsMap[pattern]} "${pattern}" related problems`}
           >
-            {pattern} : {patternsMap[pattern]}
+            {pattern}
+            {' '}
+            :
+            {patternsMap[pattern]}
           </span>
         </Badge>
       ))}
     </div>
   ) : null;
-};
+}
 
 PatternFrequencies.propTypes = {
   filters: PropTypes.arrayOf(

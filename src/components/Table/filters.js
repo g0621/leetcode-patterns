@@ -4,7 +4,7 @@ function CreateDropDownListHelper(options, filterValue, setFilter) {
   return (
     <select
       value={filterValue}
-      onChange={e => {
+      onChange={(e) => {
         setFilter(e.target.value || '');
       }}
     >
@@ -28,7 +28,7 @@ export function DefaultColumnFilter({
   return (
     <input
       value={filterValue || ''}
-      onChange={e => {
+      onChange={(e) => {
         setFilter(e.target.value || '');
       }}
       placeholder={`Search ${count} questions`}
@@ -45,15 +45,17 @@ export function SelectDifficultyColumnFilter({
 }
 
 export function SelectColumnFilter({
-  column: { filterValue, setFilter, preFilteredRows, id },
+  column: {
+    filterValue, setFilter, preFilteredRows, id,
+  },
 }) {
   const options = React.useMemo(() => {
     const set = new Set();
 
-    preFilteredRows.forEach(row => {
+    preFilteredRows.forEach((row) => {
       const values = String(row.values[id]).split(',');
 
-      values.forEach(value => {
+      values.forEach((value) => {
         set.add(value);
       });
     });

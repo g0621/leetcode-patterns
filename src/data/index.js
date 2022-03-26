@@ -28,8 +28,7 @@ const questions = [
   {
     id: 2,
     name: 'Find All Numbers Disappeared in an Array',
-    url:
-      'https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/',
+    url: 'https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/',
     pattern: ['Arrays'],
     difficulty: 'Easy',
     premium: false,
@@ -650,8 +649,7 @@ const questions = [
   {
     id: 45,
     name: 'Number of Longest Increasing Subsequence',
-    url:
-      'https://leetcode.com/problems/number-of-longest-increasing-subsequence/',
+    url: 'https://leetcode.com/problems/number-of-longest-increasing-subsequence/',
     pattern: ['Dynamic Programming'],
     difficulty: 'Medium',
     premium: false,
@@ -686,8 +684,7 @@ const questions = [
   {
     id: 48,
     name: 'Best Time to Buy and Sell Stock with Cooldown',
-    url:
-      'https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/',
+    url: 'https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/',
     pattern: ['Dynamic Programming'],
     difficulty: 'Medium',
     premium: false,
@@ -874,8 +871,7 @@ const questions = [
   {
     id: 64,
     name: 'Number of Connected Components in an Undirected Graph',
-    url:
-      'https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/',
+    url: 'https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/',
     pattern: ['BFS', 'DFS', 'Graph', 'Union Find'],
     difficulty: 'Medium',
     premium: true,
@@ -971,8 +967,7 @@ const questions = [
   {
     id: 72,
     name: 'Kth Smallest Element in a Sorted Matrix',
-    url:
-      'https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/',
+    url: 'https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/',
     pattern: ['Binary Search', 'Heap'],
     difficulty: 'Medium',
     premium: false,
@@ -1010,8 +1005,7 @@ const questions = [
   {
     id: 75,
     name: 'Smallest Range Covering Elements from K Lists',
-    url:
-      'https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/',
+    url: 'https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/',
     pattern: ['Heap'],
     difficulty: 'Hard',
     premium: false,
@@ -1110,8 +1104,7 @@ const questions = [
   {
     id: 82,
     name: 'Minimum Number of Arrows to Burst Balloons',
-    url:
-      'https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/',
+    url: 'https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/',
     pattern: ['Greedy'],
     difficulty: 'Medium',
     premium: false,
@@ -1165,8 +1158,7 @@ const questions = [
   {
     id: 86,
     name: 'Find Smallest Letter Greater Than Target',
-    url:
-      'https://leetcode.com/problems/find-smallest-letter-greater-than-target/',
+    url: 'https://leetcode.com/problems/find-smallest-letter-greater-than-target/',
     pattern: ['Binary Search'],
     difficulty: 'Easy',
     premium: false,
@@ -1318,8 +1310,7 @@ const questions = [
   {
     id: 99,
     name: 'Longest Repeating Character Replacement',
-    url:
-      'https://leetcode.com/problems/longest-repeating-character-replacement/',
+    url: 'https://leetcode.com/problems/longest-repeating-character-replacement/',
     pattern: ['Sliding Window'],
     difficulty: 'Medium',
     premium: false,
@@ -1349,8 +1340,7 @@ const questions = [
   {
     id: 101,
     name: 'Longest Substring Without Repeating Characters',
-    url:
-      'https://leetcode.com/problems/longest-substring-without-repeating-characters/',
+    url: 'https://leetcode.com/problems/longest-substring-without-repeating-characters/',
     pattern: ['Sliding Window'],
     difficulty: 'Medium',
     premium: false,
@@ -1369,8 +1359,7 @@ const questions = [
   {
     id: 102,
     name: 'Minimum Number of K Consecutive Bit Flips',
-    url:
-      'https://leetcode.com/problems/minimum-number-of-k-consecutive-bit-flips/',
+    url: 'https://leetcode.com/problems/minimum-number-of-k-consecutive-bit-flips/',
     pattern: ['Sliding Window'],
     difficulty: 'Hard',
     premium: false,
@@ -1379,8 +1368,7 @@ const questions = [
   {
     id: 103,
     name: 'Count Unique Characters of All Substrings of a Given String',
-    url:
-      'https://leetcode.com/problems/count-unique-characters-of-all-substrings-of-a-given-string/',
+    url: 'https://leetcode.com/problems/count-unique-characters-of-all-substrings-of-a-given-string/',
     pattern: ['Sliding Window'],
     difficulty: 'Hard',
     premium: false,
@@ -1406,8 +1394,7 @@ const questions = [
   {
     id: 105,
     name: 'Substring with Concatenation of All Words',
-    url:
-      'https://leetcode.com/problems/substring-with-concatenation-of-all-words/',
+    url: 'https://leetcode.com/problems/substring-with-concatenation-of-all-words/',
     pattern: ['Sliding Window'],
     difficulty: 'Hard',
     premium: false,
@@ -1634,8 +1621,7 @@ const questions = [
   {
     id: 124,
     name: 'Binary Tree Zigzag Level Order Traversal',
-    url:
-      'https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/',
+    url: 'https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/',
     pattern: ['BFS'],
     difficulty: 'Medium',
     premium: false,
@@ -1654,8 +1640,7 @@ const questions = [
   {
     id: 125,
     name: 'Populating Next Right Pointers in Each Node',
-    url:
-      'https://leetcode.com/problems/populating-next-right-pointers-in-each-node/',
+    url: 'https://leetcode.com/problems/populating-next-right-pointers-in-each-node/',
     pattern: ['BFS'],
     difficulty: 'Medium',
     premium: false,
@@ -1664,8 +1649,7 @@ const questions = [
   {
     id: 126,
     name: 'Populating Next Right Pointers in Each Node II',
-    url:
-      'https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/',
+    url: 'https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/',
     pattern: ['BFS'],
     difficulty: 'Medium',
     premium: false,
@@ -1762,8 +1746,7 @@ const questions = [
   {
     id: 134,
     name: 'Lowest Common Ancestor of a Binary Search Tree',
-    url:
-      'https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/',
+    url: 'https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/',
     pattern: ['DFS'],
     difficulty: 'Easy',
     premium: false,
@@ -1808,8 +1791,7 @@ const questions = [
   {
     id: 139,
     name: 'Lowest Common Ancestor of a Binary Tree',
-    url:
-      'https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/',
+    url: 'https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/',
     pattern: ['DFS'],
     difficulty: 'Medium',
     premium: false,
@@ -1848,8 +1830,7 @@ const questions = [
   {
     id: 142,
     name: 'Construct Binary Tree from Preorder and Inorder Traversal',
-    url:
-      'https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/',
+    url: 'https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/',
     pattern: ['DFS'],
     difficulty: 'Medium',
     premium: false,
@@ -2210,8 +2191,7 @@ const questions = [
   {
     id: 167,
     name: 'Sort Items by Groups Respecting Dependencies',
-    url:
-      'https://leetcode.com/problems/sort-items-by-groups-respecting-dependencies/',
+    url: 'https://leetcode.com/problems/sort-items-by-groups-respecting-dependencies/',
     pattern: ['DFS', 'Graph', 'Topological Sort'],
     difficulty: 'Hard',
     premium: false,

@@ -19,7 +19,7 @@ const Blind = `${imagePath}Blind.png`;
 const Educative = `${imagePath}Educative.png`;
 const Hackernoon = `${imagePath}Hackernoon.png`;
 
-const Acknowledgements = () => {
+function Acknowledgements() {
   return (
     <Container className="acknowledgements">
       <Row>
@@ -94,6 +94,6 @@ const Acknowledgements = () => {
       </Row>
     </Container>
   );
-};
+}
 
 export default Acknowledgements;

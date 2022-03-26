@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown';
 
 import './styles.scss';
 
-const Tips = () => {
+function Tips() {
   const input = `
   \`\`\`md
 If input array is sorted then
@@ -47,6 +47,6 @@ Else
 \`\`\``;
 
   return <ReactMarkdown className="tips" source={input} />;
-};
+}
 
 export default Tips;

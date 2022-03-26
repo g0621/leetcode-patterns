@@ -16,10 +16,10 @@ import Acknowledgements from '../Acknowledgements';
 
 import './styles.scss';
 
-const Tabs = () => {
+function Tabs() {
   const [activeTab, setActiveTab] = useState('1');
 
-  const toggle = tab => {
+  const toggle = (tab) => {
     if (activeTab !== tab) setActiveTab(tab);
   };
 
@@ -73,6 +73,6 @@ const Tabs = () => {
       </TabContent>
     </Container>
   );
-};
+}
 
 export default Tabs;
